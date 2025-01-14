@@ -1,8 +1,14 @@
-# React + Vite
+# Google Books Catalogue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Changelog
 
-Currently, two official plugins are available:
+#### 12/01/2025
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Created project plan on Trello
+- Created project wireframe on Figma
+
+#### 14/01/2025
+
+- Created repo
+- Created react file structure
+- Styled body, header, error message and search

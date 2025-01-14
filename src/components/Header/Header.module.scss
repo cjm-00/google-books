@@ -1,0 +1,15 @@
+.header {
+  background-color: #042a2b;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading {
+    margin: auto;
+    color: #cdedf6;
+    font-family: "Merriweather Sans";
+    padding: 30px;
+    font-weight: 800;
+  }
+}

@@ -1,0 +1,11 @@
+.messageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  .error {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    color: #d84727;
+  }
+}
