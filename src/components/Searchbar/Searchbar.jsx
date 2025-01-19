@@ -1,33 +1,13 @@
 import { useContext, useState } from "react";
-import classes from "./Searchbar.module.scss";
-import { SearchContext } from "../../context/SearchContextProvider";
+import classes from "./SearchBar.module.scss";
 
-const Searchbar = () => {
-  const { onSearch } = useContext(SearchContext);
-  const [searchTerm, setSearchTerm] = useState("");
-  const onInputChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const onSubmit = (e) => {
-    console.log(searchTerm);
-    onSearch(searchTerm);
-    e.preventDefault();
-    setSearchTerm("");
-  };
-
+const SearchBar = () => {
   return (
-    <form className={classes.Searchbar} onSubmit={onSubmit}>
-      <input
-        type="text"
-        className={classes.input}
-        placeholder="Search"
-        onChange={onInputChange}
-        value={searchTerm}
-      />
+    <form className={classes.Searchbar}>
+      <input type="text" className={classes.input} placeholder="Search" />
       <button className={classes.searchButton}>Search</button>
     </form>
   );
 };
 
-export default Searchbar;
+export default SearchBar;

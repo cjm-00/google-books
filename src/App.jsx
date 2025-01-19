@@ -1,30 +1,21 @@
 import { useEffect, useState } from "react";
-
 import "./App.scss";
 import Header from "./components/Header/Header";
-import Searchbar from "./components/Searchbar/Searchbar";
+import SearchBar from "./components/SearchBar/SearchBar";
 import Message from "./components/Message/Message";
-import Card from "./components/Card/Card";
-import CardContainer from "./containers/CardContainer/CardContainer";
-import { fetchBooks } from "./data/bookAPI";
-import SearchContextProvider from "./context/SearchContextProvider";
+import BooksDataContextProvider from "./context/BooksDataContextProvider";
+import BookList from "./containers/BookList/BookList";
 // import { onSubmit } from "./components/Searchbar/Searchbar";
 
 function App() {
-  const [booksData, setBooksData] = useState(null);
-
-  // useEffect(() => {
-  //   setBooksData(fetchBooks());
-  // }, [onSubmit]);
-  // console.log(booksData, "data from app");
   return (
     <>
-      <SearchContextProvider>
+      <BooksDataContextProvider>
         <Header />
-        <Searchbar />
+        <SearchBar />
         {/* <Message /> */}
-        <CardContainer dataforRender={booksData} />
-      </SearchContextProvider>
+        <BookList />
+      </BooksDataContextProvider>
     </>
   );
 }

@@ -1,6 +1,8 @@
-import classes from "./Card.module.scss";
+import { BooksDataContext } from "../../context/BooksDataContextProvider";
+import classes from "./BookCard.module.scss";
 
-const Card = ({ data }) => {
+const BookCard = ({ BooksDataContext }) => {
+  console.log(booksData);
   return (
     <>
       {/* <div className={classes.card}>
@@ -32,4 +34,4 @@ const Card = ({ data }) => {
   );
 };
 
-export default Card;
+export default BookCard;
