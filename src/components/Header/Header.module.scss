@@ -1,5 +1,7 @@
+@import "../../data/colors.module.scss";
+
 .header {
-  background-color: #042a2b;
+  background-color: $ink;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@
 
   .heading {
     margin: auto;
-    color: #cdedf6;
+    color: $cyan;
     font-family: "Merriweather Sans";
     padding: 30px;
     font-weight: 800;

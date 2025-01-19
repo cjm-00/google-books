@@ -1,0 +1,31 @@
+@import "../../data/colors.module.scss";
+
+.card {
+  background-color: $ink;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  .title {
+  }
+  .author {
+    padding-bottom: 50px;
+  }
+  .rating {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-self: center;
+    .stars {
+      display: flex;
+      flex-direction: row;
+      .filledStars {
+        color: $orange;
+      }
+    }
+  }
+
+  .more {
+    align-self: center;
+  }
+}
