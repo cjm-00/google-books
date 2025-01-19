@@ -1,14 +1,10 @@
 import BookCard from "../../components/BookCard/BookCard";
-import classes from "./BookList.module.scss";
+import { BooksDataContext } from "../../context/BooksDataContextProvider";
+import { useContext } from "react";
 
 const BookList = () => {
-  return (
-    <>
-      <div className={classes.list}>
-        <BookCard />
-      </div>
-    </>
-  );
+  const { booksData } = useContext(BooksDataContext);
+  return booksData.map((book) => <BookCard key={book.id} data={book} />);
 };
 
 export default BookList;

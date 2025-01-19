@@ -9,7 +9,7 @@ const BooksDataContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetchBooks().then((data) => {
-      console.log("data from fetch:", data);
+      // console.log("data from fetch:", data);
       setBooksData(data);
       setIsLoading(false);
     });
@@ -17,7 +17,6 @@ const BooksDataContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (!isLoading) {
-      console.log("books data after loading:", booksData);
     }
   }, [booksData, isLoading]);
 

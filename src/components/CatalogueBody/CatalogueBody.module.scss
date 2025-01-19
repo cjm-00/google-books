@@ -1,7 +1,11 @@
 @import "../../colors.module.scss";
 
-.list {
+.body {
   background-color: $cyan;
   display: flex;
+  flex-direction: row;
   padding: 50px;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }

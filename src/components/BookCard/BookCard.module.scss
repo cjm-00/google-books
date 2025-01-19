@@ -2,14 +2,25 @@
 
 .card {
   background-color: $ink;
+  font-family: "Merriweather Sans";
+
   color: white;
-  padding: 40px;
+  // margin: 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
   .title {
+    font-size: 1.2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    padding-top: 10px;
   }
   .author {
-    padding-bottom: 50px;
+    padding-bottom: 0px;
+    font-size: 1em;
   }
   .rating {
     display: flex;
@@ -27,5 +38,18 @@
 
   .more {
     align-self: center;
+    color: $orange;
+
+    padding-bottom: 20px;
+    &:hover {
+      color: $chilli;
+      transform: scale(1.02);
+    }
+  }
+
+  .cover {
+    width: 90%;
+    align-self: center;
+    padding-top: 20px;
   }
 }

@@ -19,3 +19,11 @@
 - Created basic card elements
 - Wrote function fetchBooks to fetch API data
 - Created cleanData function to format data received
+- Created data map to track data paths and component responsiblities
+
+### 19/01/2025
+
+- Edited file structure
+- Connected API data to cards generated
+- Styled catalogue body and cards
+- created error catching for data pulls

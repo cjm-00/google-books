@@ -2,10 +2,13 @@ export const fetchBooks = async () => {
   const key = import.meta.env.VITE_BOOKS_API;
   try {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=colour+of+magic&key=${key}`
+      `https://www.googleapis.com/books/v1/volumes?q=witcher&key=${key}&maxResults=30`
     );
+    // const response = await fetch(
+    //   `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${key}&maxResults=30`
+    // );
     const data = await response.json();
-    console.log(data.items);
+    // console.log(data.items);
 
     const bookListResults = cleanData(data.items);
     return bookListResults;
@@ -21,8 +24,10 @@ const cleanData = (books) => {
   return books.map((book) => ({
     id: book.id,
     title: book.volumeInfo.title,
-    author: book.volumeInfo.authors.join(", "),
-    rating: book.volumeInfo.averageRating,
+    author: book.volumeInfo.authors
+      ? book.volumeInfo.authors.join(", ")
+      : "Unkown Author",
+    rating: book.volumeInfo.averageRating || "-",
     categories: book.volumeInfo.categories,
     description: book.volumeInfo.description,
     pages: book.volumeInfo.pageCount,
@@ -30,8 +35,9 @@ const cleanData = (books) => {
     publisher: book.volumeInfo.publisher,
     publicDomain: book.accessInfo.publicDomain,
     mature: book.volumeInfo.maturityRating,
-    //   thumb: book.volumeInfo.imageLinks.smallThumbnail,
-    //   cover: book.volumeInfo.imageLinks.thumbnail,
+    cover: book.volumeInfo.imageLinks?.thumbnail
+      ? book.volumeInfo.imageLinks.thumbnail + "&fife=w800"
+      : "http://lgimages.s3.amazonaws.com/nc-md.gif",
   }));
 };
 
