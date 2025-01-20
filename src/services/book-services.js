@@ -1,19 +1,15 @@
 export const fetchBooks = async () => {
   const key = import.meta.env.VITE_BOOKS_API;
+  let searchTerm = "great";
   try {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=witcher&key=${key}&maxResults=30`
+      `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${key}&maxResults=30`
     );
-    // const response = await fetch(
-    //   `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${key}&maxResults=30`
-    // );
     const data = await response.json();
-    // console.log(data.items);
-
     const bookListResults = cleanData(data.items);
     return bookListResults;
   } catch (error) {
-    console.error("cannot fetch from api:", error);
+    console.error("Data Fetch Error :c");
     return [];
   }
 
@@ -27,12 +23,12 @@ const cleanData = (books) => {
     author: book.volumeInfo.authors
       ? book.volumeInfo.authors.join(", ")
       : "Unkown Author",
-    rating: book.volumeInfo.averageRating || "-",
-    categories: book.volumeInfo.categories,
+    rating: book.volumeInfo.averageRating || "--",
+    categories: book.volumeInfo.categories || "--",
     description: book.volumeInfo.description,
-    pages: book.volumeInfo.pageCount,
-    date: book.volumeInfo.publishedDate,
-    publisher: book.volumeInfo.publisher,
+    pages: book.volumeInfo.pageCount || "--",
+    date: book.volumeInfo.publishedDate || "--",
+    publisher: book.volumeInfo.publisher || "--",
     publicDomain: book.accessInfo.publicDomain,
     mature: book.volumeInfo.maturityRating,
     cover: book.volumeInfo.imageLinks?.thumbnail

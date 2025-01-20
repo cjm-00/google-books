@@ -1,0 +1,59 @@
+@import "../../scss/colors";
+
+.modal {
+  position: fixed;
+  z-index: 3;
+  top: 50px;
+  background-color: $moonstone;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 2px 2px 3px rgba(73, 81, 87, 0.39);
+  display: flex;
+  font-family: "Merriweather Sans";
+  color: $ink;
+
+  .cover {
+    display: block;
+    object-fit: scale-down;
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+    background-color: $ink;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+
+    // align-items: center;
+    padding: 40px;
+    margin: auto;
+    padding-left: 50px;
+
+    .close {
+      background-color: $moonstone;
+      border: $ink 2px solid;
+      font-weight: 800;
+      align-self: flex-end;
+      &:hover {
+        background-color: $cyan;
+        color: $moonstone;
+        border: $moonstone 2px solid;
+      }
+    }
+
+    .title {
+      padding-top: 20px;
+    }
+
+    .description {
+      font-size: 0.95em;
+      font-weight: 400;
+      max-height: 250px;
+      overflow-y: scroll;
+      padding: 15px;
+      padding-left: 0px;
+    }
+  }
+}
