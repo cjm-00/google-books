@@ -1,0 +1,59 @@
+@import "../../scss/colors";
+
+.card {
+  background-color: $ink;
+  font-family: "Merriweather Sans";
+
+  color: white;
+  // margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  .title {
+    font-size: 1.2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .author {
+    padding-bottom: 0px;
+    font-size: 1em;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+  .rating {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: center;
+    font-size: 0.8em;
+    .stars {
+      display: flex;
+      flex-direction: row;
+      .filledStars {
+        color: $orange;
+      }
+    }
+  }
+
+  .more {
+    align-self: center;
+    color: $moonstone;
+
+    padding-bottom: 20px;
+    &:hover {
+      color: $orange;
+      transform: scale(1.02);
+    }
+  }
+
+  .cover {
+    width: 90%;
+    align-self: center;
+    padding-top: 20px;
+  }
+}

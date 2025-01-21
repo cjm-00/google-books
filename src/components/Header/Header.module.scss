@@ -1,0 +1,17 @@
+@import "../../scss/colors";
+
+.header {
+  background-color: $ink;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading {
+    margin: auto;
+    color: $cyan;
+    font-family: "Merriweather Sans";
+    padding: 30px;
+    font-weight: 800;
+  }
+}
