@@ -1,6 +1,6 @@
-export const fetchBooks = async () => {
+export const fetchBooks = async (searchTerm) => {
   const key = import.meta.env.VITE_BOOKS_API;
-  let searchTerm = "great";
+  // let searchTerm = "friday";
   try {
     const response = await fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${key}&maxResults=30`

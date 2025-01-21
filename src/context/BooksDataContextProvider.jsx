@@ -6,22 +6,9 @@ export const BooksDataContext = createContext(null);
 
 const BooksDataContextProvider = ({ children }) => {
   const [booksData, setBooksData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    fetchBooks().then((data) => {
-      // console.log("data from fetch:", data);
-      setBooksData(data);
-      setIsLoading(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!isLoading) {
-    }
-  }, [booksData, isLoading]);
 
   return (
-    <BooksDataContext.Provider value={{ booksData, setBooksData }}>
+    <BooksDataContext.Provider value={{ booksData, setBooksData, fetchBooks }}>
       {children}
     </BooksDataContext.Provider>
   );
